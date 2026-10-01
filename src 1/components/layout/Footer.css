@@ -1,0 +1,354 @@
+/* =========================================================
+   Footer — clean white background, modern layout
+   ========================================================= */
+
+.footer {
+  position: relative;
+  background: #ffffff;
+  color: #000000;
+  padding: 4.5rem 0 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   Grid — 4 columns: brand | products | company | contact
+   ========================================================= */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  align-items: start;
+}
+
+/* =========================================================
+   Brand column
+   ========================================================= */
+.footer-brand {
+  min-width: 0;
+}
+
+.footer-brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+}
+
+.footer-logo {
+  width: 44px;
+  height: 44px;
+  background: #b8860b;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.footer-brand-name {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #000000;
+  letter-spacing: 0.5px;
+}
+
+.footer-brand-sub {
+  font-family: var(--font-serif, Georgia, serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 0.72rem;
+  color: #b8860b;
+}
+
+.footer-brand-desc {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #0a0a0a;
+  max-width: 320px;
+  margin: 0 0 1.75rem;
+}
+
+/* =========================================================
+   Socials
+   ========================================================= */
+.footer-socials {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.footer-social {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  color: #000000;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.footer-social:hover {
+  background: var(--hover-color, #b8860b);
+  color: #ffffff;
+  border-color: var(--hover-color, #b8860b);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px -10px rgba(0, 0, 0, 0.35);
+}
+
+.footer-social:focus-visible {
+  outline: 2px solid #b8860b;
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   Column headings + lists
+   ========================================================= */
+.footer-col {
+  min-width: 0;
+}
+
+/* First-level heading: uppercase, gold underline */
+.footer-col-title {
+  position: relative;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+}
+
+.footer-col-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 28px;
+  height: 2px;
+  background: #b8860b;
+  border-radius: 2px;
+}
+
+/* Second-level heading: same column, smaller, no underline,
+   with enough top spacing to read as a new group */
+.footer-col-title--sub {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: #0a0a0a;
+}
+
+.footer-col-title--sub::after {
+  display: none;
+}
+
+/* =========================================================
+   Lists
+   ========================================================= */
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0;
+}
+
+.footer-list li {
+  margin-bottom: 0.7rem;
+}
+
+.footer-list li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #0a0a0a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #b8860b;
+}
+
+/* Contact list gets slightly more breathing room */
+.footer-list--contact li {
+  margin-bottom: 0.9rem;
+}
+
+.footer-list--contact .footer-link {
+  align-items: flex-start;
+}
+
+.footer-link--address {
+  cursor: default;
+}
+
+.footer-link--address:hover {
+  color: #0a0a0a; /* address isn't a link, don't gold on hover */
+}
+
+/* Icon badge before contact items */
+.footer-contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: rgba(184, 134, 11, 0.1);
+  color: #b8860b;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* =========================================================
+   Bottom bar
+   ========================================================= */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 0.85rem;
+  color: #0a0a0a;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.footer-bottom-link {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 0.85rem;
+  color: #0a0a0a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-bottom-link:hover {
+  color: #b8860b;
+}
+
+/* =========================================================
+   Responsive — tablet (2 columns of content)
+   ========================================================= */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Contact moves to its own row */
+  .footer-col:last-child {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+  }
+}
+
+/* =========================================================
+   Responsive — mobile (1 column, centered)
+   ========================================================= */
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 1.75rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-brand-link {
+    justify-content: center;
+  }
+
+  .footer-brand-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-col-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-list li {
+    margin-bottom: 0.85rem;
+  }
+
+  .footer-link {
+    justify-content: center;
+  }
+
+  .footer-list--contact .footer-link {
+    justify-content: center;
+  }
+
+  .footer-col-title--sub {
+    margin-top: 1.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   Reduced motion
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .footer-social,
+  .footer-link,
+  .footer-bottom-link {
+    transition: none;
+  }
+
+  .footer-social:hover {
+    transform: none;
+  }
+}

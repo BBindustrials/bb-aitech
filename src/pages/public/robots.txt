@@ -1,0 +1,9 @@
+# Block admin pages from being indexed
+Disallow: /admin/
+Disallow: /api/
+
+
+User-agent: *
+Allow: /
+
+Sitemap: https://bbaitech.com/sitemap.xml

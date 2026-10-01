@@ -1,0 +1,199 @@
+/* =========================================================
+   Final CTA — Wix-style "This is what ready feels like"
+   Soft pastel gradient, big black headline, single black pill
+   ========================================================= */
+
+.final-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(6rem, 12vw, 10rem) 1.5rem;
+  text-align: center;
+  background: #ffffff;
+}
+
+/* ---------- Animated pastel gradient ---------- */
+.final-cta-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(60% 55% at 15% 35%, rgba(190, 255, 214, 0.75), transparent 65%),
+    radial-gradient(55% 50% at 85% 30%, rgba(178, 216, 255, 0.75), transparent 65%),
+    radial-gradient(70% 60% at 50% 100%, rgba(220, 200, 255, 0.55), transparent 70%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  background-size: 200% 200%, 200% 200%, 200% 200%, 100% 100%;
+  animation: finalCtaGradientShift 26s ease-in-out infinite alternate;
+}
+
+@keyframes finalCtaGradientShift {
+  0%   { background-position: 0% 0%, 100% 0%, 50% 100%, 0 0; }
+  100% { background-position: 25% 20%, 75% 15%, 45% 90%, 0 0; }
+}
+
+/* ---------- Floating blobs ---------- */
+.final-cta-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.55;
+  z-index: -1;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.final-cta-blob--1 {
+  width: 520px;
+  height: 520px;
+  top: -120px;
+  left: -140px;
+  background: radial-gradient(circle, #b8ffd0, transparent 70%);
+  animation: finalBlob1 22s ease-in-out infinite alternate;
+}
+
+.final-cta-blob--2 {
+  width: 560px;
+  height: 560px;
+  bottom: -160px;
+  right: -160px;
+  background: radial-gradient(circle, #c5b8ff, transparent 70%);
+  animation: finalBlob2 26s ease-in-out infinite alternate;
+}
+
+@keyframes finalBlob1 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(50px, 40px) scale(1.08); }
+}
+
+@keyframes finalBlob2 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-60px, -50px) scale(1.06); }
+}
+
+/* =========================================================
+   Content
+   ========================================================= */
+.final-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.final-cta-title {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #000000;
+  margin: 0 0 1.5rem;
+}
+
+.final-cta-accent {
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(90deg, #b8860b, #8b6508);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.final-cta-subtitle {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  color: #0a0a0a;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+}
+
+/* ---------- CTA button ---------- */
+.final-cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.final-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  color: #ffffff;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 1.1rem 2.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 16px 34px -14px rgba(0, 0, 0, 0.4);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+.final-cta-btn:hover {
+  transform: translateY(-2px);
+  background: #b8860b;
+  color: #ffffff;
+  box-shadow: 0 20px 40px -14px rgba(184, 134, 11, 0.55);
+}
+
+.final-cta-note {
+  display: block;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #000000;
+  opacity: 0.75;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 768px) {
+  .final-cta {
+    padding: 5rem 1rem;
+  }
+
+  .final-cta-title {
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    line-height: 1.1;
+  }
+
+  .final-cta-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .final-cta-btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 1rem 2rem;
+  }
+}
+
+/* =========================================================
+   Reduced motion
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .final-cta-bg,
+  .final-cta-blob {
+    animation: none;
+  }
+
+  .final-cta-btn {
+    transition: none;
+  }
+
+  .final-cta-btn:hover {
+    transform: none;
+  }
+}

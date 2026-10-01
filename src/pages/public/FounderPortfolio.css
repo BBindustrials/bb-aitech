@@ -1,0 +1,32 @@
+/* =========================================================
+   Founder Portfolio — case-study layout
+   Consistent with site: pastel gradient hero, black text, gold
+   ========================================================= */
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.fp-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(4.5rem, 9vw, 7rem) 1.5rem clamp(3.5rem, 7vw, 5rem);
+  background: #ffffff;
+}
+
+.fp-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(55% 45% at 18% 25%, rgba(255, 214, 165, 0.5), transparent 62%),
+    radial-gradient(50% 40% at 82% 20%, rgba(178, 216, 255, 0.5), transparent 62%),
+    radial-gradient(60% 55% at 50% 100%, rgba(190, 255, 214, 0.5), transparent 62%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  background-size: 200% 200%, 200% 200%, 200% 200%, 100% 100%;
+  animation: fpHeroShift 22s ease-in-out infinite alternate;
+}
+
+@keyframes fpHeroShift {
+  0%   { background-position: 0% 0%, 100% 0%, 50% 100%, 0 0; }
+  100% { background-position: 20% 15%, 78% 22%, 42% 88%, 0 0;

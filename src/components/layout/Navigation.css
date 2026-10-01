@@ -1,0 +1,301 @@
+/* =========================================================
+   Navigation — sticky top bar, black links, gold accents
+   ========================================================= */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  min-height: 70px;
+  gap: 1rem;
+}
+
+/* =========================================================
+   Logo
+   ========================================================= */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-logo-img {
+  height: 42px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  display: block;
+}
+
+.nav-logo-badge {
+  width: 40px;
+  height: 40px;
+  background: #b8860b;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.nav-logo-badge--sm {
+  width: 35px;
+  height: 35px;
+  font-size: 0.9rem;
+}
+
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.nav-logo-title {
+  font-family: var(--font-serif, Georgia, serif);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #000000;
+  letter-spacing: 0.5px;
+}
+
+.nav-logo-sub {
+  font-family: var(--font-serif, Georgia, serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 0.62rem;
+  color: #b8860b;
+}
+
+/* =========================================================
+   Desktop Links
+   ========================================================= */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-link {
+  position: relative;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+  white-space: nowrap;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #b8860b;
+  border-bottom-color: rgba(184, 134, 11, 0.4);
+}
+
+.nav-link.is-active {
+  color: #b8860b;
+  font-weight: 600;
+  border-bottom-color: #b8860b;
+}
+
+/* =========================================================
+   Desktop CTA (gold pill)
+   ========================================================= */
+.nav-cta-wrap {
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.nav-cta {
+  padding: 0.65rem 1.35rem;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  background: #b8860b;
+  color: #ffffff;
+  border: 2px solid #b8860b;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px -10px rgba(184, 134, 11, 0.55);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+  background: #000000;
+  border-color: #000000;
+  box-shadow: 0 12px 26px -10px rgba(0, 0, 0, 0.45);
+}
+
+.nav-cta--block {
+  width: 100%;
+  padding: 0.9rem 1.25rem;
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   Mobile Toggle
+   ========================================================= */
+.nav-toggle {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nav-toggle:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================================
+   Mobile Panel
+   ========================================================= */
+.nav-mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: navFadeIn 0.2s ease;
+}
+
+@keyframes navFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.nav-mobile-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  background: #ffffff;
+  z-index: 1000;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  animation: navSlideIn 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes navSlideIn {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+.nav-mobile-head {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-mobile-logo-img {
+  height: 36px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+.nav-mobile-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #000000;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.nav-mobile-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.nav-mobile-links {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.nav-mobile-link {
+  display: block;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-mobile-link:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.nav-mobile-link.is-active {
+  color: #b8860b;
+  font-weight: 600;
+  border-left-color: #b8860b;
+  background: rgba(184, 134, 11, 0.05);
+}
+
+.nav-mobile-cta-wrap {
+  padding: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.nav-mobile-cta-wrap .nav-cta-wrap {
+  display: block;
+}
+
+/* =========================================================
+   Reduced motion
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .nav-link,
+  .nav-cta,
+  .nav-toggle,
+  .nav-mobile-link,
+  .nav-mobile-close {
+    transition: none;
+  }
+
+  .nav-mobile-panel,
+  .nav-mobile-backdrop {
+    animation: none;
+  }
+}

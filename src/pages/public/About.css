@@ -1,0 +1,541 @@
+/* =========================================================
+   About page — Wix-inspired, pastel gradient hero,
+   real black text, richer gold accents
+   ========================================================= */
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.about-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(5.5rem, 10vw, 8rem) 1.5rem clamp(4rem, 8vw, 6rem);
+  text-align: center;
+  background: #ffffff;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(55% 45% at 18% 25%, rgba(255, 214, 165, 0.5), transparent 62%),
+    radial-gradient(50% 40% at 82% 18%, rgba(178, 216, 255, 0.5), transparent 62%),
+    radial-gradient(60% 55% at 50% 100%, rgba(190, 255, 214, 0.5), transparent 62%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  background-size: 200% 200%, 200% 200%, 200% 200%, 100% 100%;
+  animation: aboutGradientShift 20s ease-in-out infinite alternate;
+}
+
+@keyframes aboutGradientShift {
+  0%   { background-position: 0% 0%, 100% 0%, 50% 100%, 0 0; }
+  100% { background-position: 20% 15%, 78% 22%, 42% 88%, 0 0; }
+}
+
+.about-hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.45;
+  z-index: -1;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.about-hero-blob--1 {
+  width: 420px;
+  height: 420px;
+  top: -80px;
+  left: -100px;
+  background: radial-gradient(circle, #ffb26b, transparent 70%);
+  animation: aboutBlob1 20s ease-in-out infinite alternate;
+}
+
+.about-hero-blob--2 {
+  width: 380px;
+  height: 380px;
+  bottom: -140px;
+  right: -120px;
+  background: radial-gradient(circle, #8ec5ff, transparent 70%);
+  animation: aboutBlob2 24s ease-in-out infinite alternate;
+}
+
+@keyframes aboutBlob1 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(50px, 40px) scale(1.08); }
+}
+@keyframes aboutBlob2 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-50px, -50px) scale(1.06); }
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #000000;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+}
+
+.about-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #15803d;
+  box-shadow: 0 0 0 4px rgba(21, 128, 61, 0.18);
+}
+
+.about-hero-title {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #000000;
+  margin: 0 0 1.25rem;
+}
+
+.about-hero-subtitle {
+  font-family: var(--font-serif, Georgia, serif);
+  font-style: italic;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: #0a0a0a;
+  line-height: 1.65;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   Section head (reusable)
+   ========================================================= */
+.about-section-head {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-section-head h2 {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #000000;
+  margin: 0 0 1rem;
+}
+
+.about-rule {
+  width: 60px;
+  height: 2px;
+  background: #b8860b;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* =========================================================
+   STORY
+   ========================================================= */
+.about-story {
+  background: #ffffff;
+}
+
+.about-story-body {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-story-body p {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: #0a0a0a;
+  margin: 0 0 1.5rem;
+}
+
+.about-story-body p:last-child {
+  margin-bottom: 0;
+}
+
+.about-story-body strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* =========================================================
+   MISSION & VISION
+   ========================================================= */
+.about-mv {
+  background:
+    radial-gradient(60% 50% at 15% 20%, rgba(255, 224, 178, 0.35), transparent 65%),
+    radial-gradient(55% 45% at 85% 30%, rgba(190, 216, 255, 0.35), transparent 65%),
+    linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+  background-size: 200% 200%, 200% 200%, 100% 100%;
+  animation: aboutGradientShift 22s ease-in-out infinite alternate;
+}
+
+.about-mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.about-mv-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow:
+    0 20px 40px -22px rgba(15, 23, 42, 0.15),
+    0 8px 20px -12px rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-mv-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 30px 55px -25px rgba(15, 23, 42, 0.22),
+    0 12px 28px -14px rgba(15, 23, 42, 0.12);
+}
+
+.about-mv-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: rgba(184, 134, 11, 0.12);
+  color: #b8860b;
+  margin-bottom: 1.25rem;
+}
+
+.about-mv-card h3 {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #000000;
+  margin: 0 0 1rem;
+}
+
+.about-mv-card p {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #0a0a0a;
+  margin: 0;
+}
+
+/* =========================================================
+   TEAM
+   ========================================================= */
+.about-team {
+  background: #ffffff;
+}
+
+.about-team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.about-team-card {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.about-team-card:hover {
+  transform: translateY(-4px);
+}
+
+.about-team-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1.25rem;
+  background: #f1f5f9;
+  box-shadow: 0 14px 30px -16px rgba(15, 23, 42, 0.25);
+  border: 3px solid #ffffff;
+  outline: 1px solid rgba(184, 134, 11, 0.25);
+}
+
+.about-team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-team-name {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000000;
+  margin: 0 0 0.35rem;
+}
+
+.about-team-role {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #b8860b;
+  margin: 0 0 0.75rem;
+}
+
+.about-team-bio {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #0a0a0a;
+  margin: 0;
+}
+
+/* ---------- Planned hires ---------- */
+.about-hires {
+  margin-top: 1rem;
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+.about-hires h3 {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #000000;
+  margin: 0 0 1.25rem;
+}
+
+.about-hires-list {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.about-hire-chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  background: #ffffff;
+  border: 1.5px solid rgba(184, 134, 11, 0.35);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+}
+
+/* =========================================================
+   FOUNDER
+   ========================================================= */
+.about-founder {
+  background:
+    radial-gradient(55% 45% at 20% 20%, rgba(190, 255, 214, 0.4), transparent 62%),
+    radial-gradient(50% 40% at 80% 30%, rgba(255, 214, 165, 0.4), transparent 62%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  background-size: 200% 200%, 200% 200%, 100% 100%;
+  animation: aboutGradientShift 24s ease-in-out infinite alternate;
+}
+
+.about-founder-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow:
+    0 40px 70px -30px rgba(15, 23, 42, 0.2),
+    0 12px 28px -14px rgba(15, 23, 42, 0.1);
+}
+
+.about-founder-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f1f5f9;
+  border: 3px solid #ffffff;
+  outline: 1px solid rgba(184, 134, 11, 0.3);
+  box-shadow: 0 20px 40px -20px rgba(15, 23, 42, 0.3);
+}
+
+.about-founder-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-founder-content {
+  min-width: 0;
+}
+
+.about-founder-eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #b8860b;
+  margin-bottom: 0.75rem;
+}
+
+.about-founder-content h2 {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #000000;
+  margin: 0 0 0.35rem;
+}
+
+.about-founder-name {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #b8860b;
+  margin: 0 0 1.25rem;
+}
+
+.about-founder-content p {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #0a0a0a;
+  margin: 0 0 1.75rem;
+  max-width: 60ch;
+}
+
+.about-founder-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #000000;
+  padding: 0.9rem 1.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 12px 26px -12px rgba(0, 0, 0, 0.4);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.about-founder-btn:hover {
+  transform: translateY(-2px);
+  background: #b8860b;
+  box-shadow: 0 16px 32px -12px rgba(184, 134, 11, 0.55);
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 1024px) {
+  .about-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 4.5rem 1rem 3rem;
+  }
+
+  .about-mv-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .about-mv-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-team-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .about-team-photo {
+    width: 130px;
+    height: 130px;
+  }
+
+  .about-founder-card {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .about-founder-photo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .about-founder-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-founder-btn {
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   Reduced motion
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .about-hero-bg,
+  .about-hero-blob,
+  .about-mv,
+  .about-founder {
+    animation: none;
+  }
+
+  .about-mv-card,
+  .about-team-card,
+  .about-founder-btn {
+    transition: none;
+  }
+
+  .about-mv-card:hover,
+  .about-team-card:hover,
+  .about-founder-btn:hover {
+    transform: none;
+  }
+}
